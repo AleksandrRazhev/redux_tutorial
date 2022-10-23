@@ -36,4 +36,11 @@ ________________________________________________________________________________
 	
 	combineReducers - функция для передачи нескольких редьюсеров в стор
 	
-	2.50
+	https://www.npmjs.com/package/redux-devtools-extension
+	npm i redux-devtools-extension
+	
+	import { composeWithDevTools } from "redux-devtools-extension";
+	export const store = createStore(rootReducer, composeWithDevTools());		composeWithDevTools передается вторым параметром в createStore
+	
+	https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+	
