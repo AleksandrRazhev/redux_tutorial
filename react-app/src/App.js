@@ -4,6 +4,8 @@ import { addCustomerAction } from "./store/customerReducer";
 import { removeCustomerAction } from "./store/customerReducer";
 import { addCashAction } from "./store/cashReducer";
 import { getCashAction } from "./store/cashReducer";
+import { fetchCustomers } from "./asyncActions/customers";
+
 import "./App.css";
 
 function App() {
@@ -49,6 +51,9 @@ function App() {
       <div className="block">
         <button className="button" onClick={() => addCustomer(prompt())}>
           добавить клиента
+        </button>
+        <button className="button" onClick={() => dispatch(fetchCustomers())}>
+          получить клиентов из базы
         </button>
       </div>
       <div className="block">

@@ -50,7 +50,12 @@ ________________________________________________________________________________
 	
 	const ADD_CUSTOMER = "ADD_CUSTOMER";		для избежания ошибок лучше задавать action type в виде переменной, а не в виде строки
 	export const addCustomerAction = (payload) => ({ type: ADD_CUSTOMER, payload });		из редьюсера экспортируется функция, которая принимает payload и передает его в нужный action type
+______________________________________________________________________________________________________________________________________________	
+5. React и Redux.Action creators. Redux thunk и асинхронные действия
+	https://www.youtube.com/watch?v=CtrWoX_KDjE&list=PL6DxKON1uLOHsBCJ_vVuvRsW84VnqmPp6&index=5
 	
+	npm i redux-thunk - middleware для работы с асинхронным кодом
+	для подключения redux-thunk потребуется импортировать applyMiddleware из redux
 	
 	
 	
