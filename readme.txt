@@ -56,7 +56,21 @@ ________________________________________________________________________________
 	
 	npm i redux-thunk - middleware для работы с асинхронным кодом
 	для подключения redux-thunk потребуется импортировать applyMiddleware из redux
+______________________________________________________________________________________________________________________________________________	
+6. Redux и React. Redux saga асинхронные actions
+	https://www.youtube.com/watch?v=ylhHYtTyVGE&list=PL6DxKON1uLOHsBCJ_vVuvRsW84VnqmPp6&index=6
 	
+	Redux saga - более продвинутая библиотека для работы с асинхронным кодом, чем redux thunk
 	
+	Основные понятия:
+		Worker - функция, внутри которой находится асинхронная логика
+		Wotcher (наблюдатель) - функция генератор, в которой указывается тип action и worker. Когда action c указанным типом будет вызван, будет отрабатывать указанный worker
+		Effects - набор встроенных в redux-saga функций, которые помогают делать запросы, вызывать dispatch, следить за воркерами
 	
+	Работа с redux saga основана на генераторах
+	
+		написать с нуля файл index.js в папке store
+			createStore, combineReducers, applyMiddleware
+			composeWithDevTools
+			thunk
 	

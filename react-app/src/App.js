@@ -59,8 +59,9 @@ function App() {
       <div className="block">
         {customers.length > 0 ? (
           <ul className="customers-list">
-            {customers.map((item) => (
+            {customers.map((item, i) => (
               <li key={item.id} className="customer">
+                {`${i + 1}. `}
                 {item.name}
                 <button
                   className="button"
