@@ -15,6 +15,18 @@ function App() {
     dispatch({ type: "GET_CASH", payload: cash });
   };
 
+  const addCustomer = (name) => {
+    const customer = {
+      name,
+      id: Date.now(),
+    };
+    dispatch({ type: "ADD_CUSTOMER", payload: customer });
+  };
+
+  const removeCustomer = (id) => {
+    dispatch({ type: "REMOVE_CUSTOMER", payload: id });
+  };
+
   return (
     <div className="App">
       <div style={{ padding: "1rem", display: "flex" }}>
@@ -26,8 +38,22 @@ function App() {
           снять со счета
         </button>
       </div>
+      <div style={{ fontSize: "3rem" }}>
+        <button onClick={() => addCustomer(prompt())}>добавить клиента</button>
+        <button onClick={() => getCash(prompt())}>удалить клиента</button>
+      </div>
       <div>
-        {customers.length > 0 ? <div></div> : <p>клиенты отсутствуют</p>}
+        {customers.length > 0 ? (
+          <ul>
+            {customers.map((item) => (
+              <li key={item.id} onClick={() => removeCustomer(item.id)}>
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>клиенты отсутствуют</p>
+        )}
       </div>
     </div>
   );
