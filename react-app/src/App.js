@@ -26,7 +26,9 @@ function App() {
           снять со счета
         </button>
       </div>
-      {customers.length > 0 ? <div></div> : <div>клиенты отсутствуют</div>}
+      <div>
+        {customers.length > 0 ? <div></div> : <p>клиенты отсутствуют</p>}
+      </div>
     </div>
   );
 }
