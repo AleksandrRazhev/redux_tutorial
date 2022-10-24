@@ -48,7 +48,9 @@ ________________________________________________________________________________
 4. React и Redux.Action creators. Работа с массивами. Рефакторинг
 	https://www.youtube.com/watch?v=WLeK7vIEi5I&list=PL6DxKON1uLOHsBCJ_vVuvRsW84VnqmPp6&index=4	
 	
-	4.38
+	const ADD_CUSTOMER = "ADD_CUSTOMER";		для избежания ошибок лучше задавать action type в виде переменной, а не в виде строки
+	export const addCustomerAction = (payload) => ({ type: ADD_CUSTOMER, payload });		из редьюсера экспортируется функция, которая принимает payload и передает его в нужный action type
+	
 	
 	
 	

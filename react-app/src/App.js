@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import { addCustomerAction } from "./store/customerReducer";
+import { removeCustomerAction } from "./store/customerReducer";
+import { addCashAction } from "./store/cashReducer";
+import { getCashAction } from "./store/cashReducer";
 import "./App.css";
 
 function App() {
@@ -8,11 +12,11 @@ function App() {
   const customers = useSelector((state) => state.customers.customers);
 
   const addCash = (cash) => {
-    dispatch({ type: "ADD_CASH", payload: cash });
+    dispatch(addCashAction(cash));
   };
 
   const getCash = (cash) => {
-    dispatch({ type: "GET_CASH", payload: cash });
+    dispatch(getCashAction(cash));
   };
 
   const addCustomer = (name) => {
@@ -20,34 +24,45 @@ function App() {
       name,
       id: Date.now(),
     };
-    dispatch({ type: "ADD_CUSTOMER", payload: customer });
+    dispatch(addCustomerAction(customer));
   };
 
   const removeCustomer = (id) => {
-    dispatch({ type: "REMOVE_CUSTOMER", payload: id });
+    dispatch(removeCustomerAction(id));
   };
 
   return (
     <div className="App">
-      <div style={{ padding: "1rem", display: "flex" }}>
-        <div style={{ fontSize: "3rem" }}>{cash}</div>
-        <button onClick={() => addCash(Number(prompt()))}>
-          получить на счет
+      <div className="block">
+        <div
+          style={{ fontSize: "3rem", display: "flex", alignItems: "center" }}
+        >
+          {cash}
+        </div>
+        <button className="button" onClick={() => addCash(Number(prompt()))}>
+          добавить на счет
         </button>
-        <button onClick={() => getCash(Number(prompt()))}>
+        <button className="button" onClick={() => getCash(Number(prompt()))}>
           снять со счета
         </button>
       </div>
-      <div style={{ fontSize: "3rem" }}>
-        <button onClick={() => addCustomer(prompt())}>добавить клиента</button>
-        <button onClick={() => getCash(prompt())}>удалить клиента</button>
+      <div className="block">
+        <button className="button" onClick={() => addCustomer(prompt())}>
+          добавить клиента
+        </button>
       </div>
-      <div>
+      <div className="block">
         {customers.length > 0 ? (
-          <ul>
+          <ul className="customers-list">
             {customers.map((item) => (
-              <li key={item.id} onClick={() => removeCustomer(item.id)}>
+              <li key={item.id} className="customer">
                 {item.name}
+                <button
+                  className="button"
+                  onClick={() => removeCustomer(item.id)}
+                >
+                  Удалить
+                </button>
               </li>
             ))}
           </ul>
