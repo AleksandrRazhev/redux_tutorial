@@ -44,3 +44,12 @@ ________________________________________________________________________________
 	
 	https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 	
+______________________________________________________________________________________________________________________________________________
+4. React и Redux.Action creators. Работа с массивами. Рефакторинг
+	https://www.youtube.com/watch?v=WLeK7vIEi5I&list=PL6DxKON1uLOHsBCJ_vVuvRsW84VnqmPp6&index=4	
+	
+	0.55
+	
+	
+	
+	

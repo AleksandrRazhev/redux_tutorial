@@ -2,11 +2,11 @@ import { legacy_createStore as createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { cashReducer } from "./cashReducer";
-import { castomerReducer } from "./castomerReducer";
+import { customerReducer } from "./customerReducer";
 
 const rootReducer = combineReducers({
   cash: cashReducer,
-  castomer: castomerReducer,
+  customers: customerReducer,
 });
 
 export const store = createStore(rootReducer, composeWithDevTools());

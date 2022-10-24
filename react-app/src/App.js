@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const dispatch = useDispatch();
   const cash = useSelector((state) => state.cash.cash);
+  const customers = useSelector((state) => state.customers.customers);
 
   const addCash = (cash) => {
     dispatch({ type: "ADD_CASH", payload: cash });
@@ -25,6 +26,7 @@ function App() {
           снять со счета
         </button>
       </div>
+      {customers.length > 0 ? <div></div> : <div>клиенты отсутствуют</div>}
     </div>
   );
 }
