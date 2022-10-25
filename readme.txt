@@ -68,9 +68,13 @@ ________________________________________________________________________________
 		Effects - набор встроенных в redux-saga функций, которые помогают делать запросы, вызывать dispatch, следить за воркерами
 	
 	Работа с redux saga основана на генераторах
+	yield - команда, имеющая некоторый аналог return в генераторах
+	метод .next() при каждом вызове генератора возвращает объект { value: 4, done: false }, где value - итерация цикла, done - булево значение
+	когда все значения проитерированы метод .next() всегда возвращает { value: undefined, done: true }
 	
-		написать с нуля файл index.js в папке store
-			createStore, combineReducers, applyMiddleware
-			composeWithDevTools
-			thunk
+	npm i redux-saga
 	
+	import { put } from "redux-saga/effects";
+		put - это функция, похожая на dispatch, для асинхронных actions
+		
+		5.59
