@@ -77,4 +77,15 @@ ________________________________________________________________________________
 	import { put } from "redux-saga/effects";
 		put - это функция, похожая на dispatch, для асинхронных actions
 		
-		5.59
+	takeEvery - первым параметром принимает type action, а вторым - worker
+		yield takeEvery(ASYNC_INCREMENT_COUNTER, incrementWorker);
+		
+	import { put, takeEvery, call } from "redux-saga/effects";
+		call возвращает данные, которые возвращает promise
+	
+	import { all } from "redux-saga/effects";
+		all - глобальный watcher, который следит за другими watchers (похож по действию на combineReducers)
+		yield all([countWatcher(), fetchUsersWatcher()]);		параметром принимает массив
+		
+		
+	12.41

@@ -2,7 +2,8 @@ const defaultState = {
   users: [],
 };
 
-const GET_USERS = "GET_USERS";
+export const GET_USERS = "GET_USERS";
+export const GET_USERS_SAGA = "GET_USERS_SAGA";
 
 export const usersReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -15,5 +16,9 @@ export const usersReducer = (state = defaultState, action) => {
 
 export const getUsersAction = (payload) => ({
   type: GET_USERS,
+  payload,
+});
+export const getUsersSagaAction = (payload) => ({
+  type: GET_USERS_SAGA,
   payload,
 });
