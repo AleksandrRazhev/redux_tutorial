@@ -42,7 +42,9 @@ function App() {
         {users.length ? (
           <ul className="users-list">
             {users.map((item, i) => (
-              <li className="users">{`${i + 1}. ${item.name}`}</li>
+              <li key={item.id} className="users">{`${i + 1}. ${
+                item.name
+              }`}</li>
             ))}
           </ul>
         ) : (

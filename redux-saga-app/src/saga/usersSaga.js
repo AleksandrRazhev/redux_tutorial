@@ -1,13 +1,12 @@
 import { put, takeEvery, call } from "redux-saga/effects";
 
-import { getUsersAction } from "../store/usersReducer";
-import { GET_USERS_SAGA } from "../store/usersReducer";
+import { GET_USERS_SAGA, getUsersAction } from "../store/usersReducer";
 
-const dataUsers = () => fetch("https://jsonplaceholder.typicode.com/users");
+const fetchUsers = () => fetch("https://jsonplaceholder.typicode.com/users");
 
 function* fetchUsersWorker() {
-  const data = yield call(dataUsers);
-  const json = yield call(() => new Promise((res) => res(data.json)));
+  const data = yield call(fetchUsers);
+  const json = yield call(() => new Promise((res) => res(data.json())));
   yield put(getUsersAction(json));
 }
 
