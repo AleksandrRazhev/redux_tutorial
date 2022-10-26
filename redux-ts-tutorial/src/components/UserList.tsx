@@ -2,8 +2,7 @@ import React from "react";
 import { userTypedSelector } from "../hooks/userTypedSelector";
 
 const UserList: React.FC = () => {
-  const state = userTypedSelector((state) => state.user);
-  console.log(state);
+  const { users, error, loading } = userTypedSelector((state) => state.user);
   return <div></div>;
 };
 

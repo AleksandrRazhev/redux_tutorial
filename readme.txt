@@ -105,5 +105,7 @@ ________________________________________________________________________________
 	
 	export type RootState = ReturnType<typeof rootReducer>;		экспортирует тип редьюсера
 	
+	const {} = userTypedSelector((state) => state.user);			при нажатии CTRL+SPACE получим переменные, доступные для деструктуризации
 	
+	20,11
 	
