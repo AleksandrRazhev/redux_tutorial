@@ -92,4 +92,13 @@ ________________________________________________________________________________
 	
 	npm i @types/react-redux redux react-redux redux-thunk axios
 	
+	типы action можно вынести в тип enum
+		enum UserActionTypes {
+		  FETCH_USERS = "FETCH_USERS",
+		  FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
+		  FETCH_USERS_ERROR = "FETCH_USERS_ERROR",
+		}
+	
+	10.33
+	
 	
