@@ -90,4 +90,6 @@ ________________________________________________________________________________
 7. React & Redux & TypeScript ПОЛНЫЙ КУРС 2021
 	https://www.youtube.com/watch?v=ETWABFYv0GM&list=PL6DxKON1uLOHsBCJ_vVuvRsW84VnqmPp6&index=9
 	
+	npm i @types/react-redux redux react-redux redux-thunk axios
+	
 	
