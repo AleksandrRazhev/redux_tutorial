@@ -21,7 +21,7 @@ const UserList: React.FC = () => {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: "1em" }}>
       {users.map((item) => (
         <div key={item.id}>{item.name}</div>
       ))}

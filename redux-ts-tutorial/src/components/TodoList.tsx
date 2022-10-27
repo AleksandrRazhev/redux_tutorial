@@ -7,11 +7,13 @@ const TodoList: React.FC = () => {
     (state) => state.todos
   );
 
-  const { fetchTodos } = useActions();
+  const { fetchTodos, setTodoPage } = useActions();
+
+  const pages = [1, 2, 3, 4, 5];
 
   useEffect(() => {
-    fetchTodos(page, limit);
-  }, []);
+    fetchTodos(page);
+  }, [page]);
 
   if (loading) {
     return <p>...идет загрузка</p>;
@@ -26,6 +28,29 @@ const TodoList: React.FC = () => {
       {todos.map((item) => (
         <div key={item.id}>{`${item.id} - ${item.title}`}</div>
       ))}
+      <div
+        style={{
+          marginTop: "1em",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        {pages.map((item) => (
+          <span
+            key={item}
+            onClick={() => setTodoPage(item)}
+            style={{
+              padding: "1em",
+              border: "1px solid black",
+              color: item === page ? "red" : "black",
+              fontWeight: item === page ? "700" : "400",
+              borderRadius: "5px",
+            }}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
