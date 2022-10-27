@@ -24,3 +24,7 @@ export const fetchTodos = (page: number = 1, limit: number = 10) => {
     }
   };
 };
+
+export const setTodoPage = (page: number): TodoAction => {
+  return { type: TodoActionTypes.SET_TODO_PAGE, payload: page };
+};
