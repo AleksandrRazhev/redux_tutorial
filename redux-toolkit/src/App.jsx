@@ -8,7 +8,6 @@ import "./App.css";
 function App() {
   const counter = useSelector((state) => state.counter.counter);
   const todos = useSelector((state) => state.todos.todos);
-  // const todos = ['qwe', 'asd', 'zxc']
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +18,7 @@ function App() {
       <button className="button" onClick={() => dispatch(todoRemoveEndAction())}>Удалить последний туду</button>
       <button className="button" onClick={() => dispatch(todoAddEndAction(prompt()))}>Добавить туду</button>
       <ul className="list">
-        {todos.map(item => <li key={item} className="list-item">{item}</li>)}
+        {todos.map(item => <li key={item.id} className="list-item">{item.name}</li>)}
       </ul>
     </div>
   );

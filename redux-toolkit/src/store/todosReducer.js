@@ -8,8 +8,9 @@ const TODO_REMOVE_END = "TODO_REMOVE_END";
 export const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case TODO_ADD_END:
+      const todo = { id: Date.now(), name: action.payload };
       const arrAdd = [...state.todos];
-      arrAdd.push(action.payload);
+      arrAdd.push(todo);
       return { state, todos: arrAdd };
     case TODO_REMOVE_END:
       const arrRemove = [...state.todos];
