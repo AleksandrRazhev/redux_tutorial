@@ -124,15 +124,19 @@ ________________________________________________________________________________
 	
 	состояние иммутабильное, его нельзя изменять через метод .push()
 	
-	npm i redux react-redux
+	https://redux-toolkit.js.org/introduction/getting-started
+	npm i @reduxjs/toolkit
+		при установке redux-toolkit отдельно устанавливать redux не нужно
 	
-	добавить id в todo
-______________________________________________________________________________________________________________________________________________
+	import { combineReducers, configureStore } from "@reduxjs/toolkit";
+	
+	в reducer не нужно возвращать объекты и делать спред старого состояния. Нужно просто написать логику изменения нужного поля
+	
+	[increment]: (state) => {}		c помощью квадратных скобок можно передать текстовую переменную в качестве ключа
+___________________________________________________________________________________________________________________________________
 2. Redux Toolkit. CreateSlice. Сделай redux код проще!
-https://www.youtube.com/watch?v=gNu-Zsn-k7w
-
-
-
-https://www.youtube.com/watch?v=gNu-Zsn-k7w
+	https://www.youtube.com/watch?v=gNu-Zsn-k7w
+	
+	как получить payload в reducer?
 
 
