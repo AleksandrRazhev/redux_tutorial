@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import { decrementAction, incrementAction } from "./store/counterReducer";
-import { todoAddEndAction } from "./store/todosReducer";
+import { todoAddEndAction, todoRemoveEndAction } from "./store/todosReducer";
 
 import "./App.css";
 
@@ -16,7 +16,7 @@ function App() {
       <h1>Счетчик {counter}</h1>
       <button className="button" onClick={() => dispatch(incrementAction(1))}>Инкремент</button>
       <button className="button" onClick={() => dispatch(decrementAction(1))}>Декремент</button>
-      <button className="button" onClick={() => console.log('Удалить последний туду')}>Удалить последний туду</button>
+      <button className="button" onClick={() => dispatch(todoRemoveEndAction())}>Удалить последний туду</button>
       <button className="button" onClick={() => dispatch(todoAddEndAction(prompt()))}>Добавить туду</button>
       <ul className="list">
         {todos.map(item => <li key={item} className="list-item">{item}</li>)}

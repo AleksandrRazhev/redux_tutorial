@@ -14,7 +14,6 @@ export const todosReducer = (state = initialState, action) => {
     case TODO_REMOVE_END:
       const arrRemove = [...state.todos];
       arrRemove.pop();
-      console.log(state);
       return { state, todos: arrRemove };
     default:
       return state;
