@@ -137,6 +137,12 @@ ________________________________________________________________________________
 2. Redux Toolkit. CreateSlice. Сделай redux код проще!
 	https://www.youtube.com/watch?v=gNu-Zsn-k7w
 	
-	как получить payload в reducer?
+	createSlice - разновидность reducer в RTK
+	
+	addTodo(state, action) {
+	      state.todos.push(action.payload);		добавляя в массив состояния элементы, можно не думать об иммутабельности
+	    },
+	
+	
 
 
