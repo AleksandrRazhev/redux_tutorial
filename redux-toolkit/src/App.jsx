@@ -1,17 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  addTodo,
-  decrement,
-  increment,
-  removeLastTodo,
-} from "./toolkitRedux/toolkitSlice";
-
 import "./App.css";
+import { decrement, increment } from "./toolkitRedux/counterSlice";
+import { addTodo, removeLastTodo } from "./toolkitRedux/todosSlice";
 
 function App() {
-  const counter = useSelector((state) => state.toolkit.counter);
-  const todos = useSelector((state) => state.toolkit.todos);
+  const counter = useSelector((state) => state.counter.counter);
+  const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
   const getTodoList = async () => {
