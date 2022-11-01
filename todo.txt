@@ -142,7 +142,9 @@ ________________________________________________________________________________
 	addTodo(state, action) {
 	      state.todos.push(action.payload);		добавляя в массив состояния элементы, можно не думать об иммутабельности
 	    },
-	
+___________________________________________________________________________________________________________________________________
+Продвинутый Redux. Redux Toolkit, RTK query, TypeScript.
+	https://www.youtube.com/watch?v=Od5H_CiU2vM&list=PL6DxKON1uLOEmw7Jkl_0Ac6wJ-jOjpKrQ&index=3
 	
 
 
